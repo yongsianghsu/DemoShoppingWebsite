@@ -7,19 +7,64 @@
     <title>二手家具購物網</title>
 
     <style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -200px; /* 初始狀態下將側邊欄收起 */
+        width: 200px;
+        height: 100%;
+        background-color: #333;
+        color: darkgray;
+        opacity:0.8;
+        transition: left 0.3s; /* 添加過渡效果 */
+    }
+
+    .sidebar ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .sidebar ul li {
+        padding: 10px;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .sidebar-toggle {
+        position: fixed;
+        left: 10px;
+        top: 10px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    /* 媒體查詢，以便在小屏幕上，側邊欄不顯示 */
+   
+    </style>
+
+    <style>
         button {
             height: 30px;
             width: 40px;
             border-radius: 10px;
-            background-color:aliceblue;
-          
+            background-color: aliceblue;
         }
-       
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-           
         }
 
         /* Global Styles */
@@ -27,16 +72,15 @@
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             color: #333;
-            
-        }
-       
-        h4 {
-         color:red;
         }
 
-        marquee{
-            color:red;
-            font-size:30px;
+        h4 {
+            color: red;
+        }
+
+        marquee {
+            color: red;
+            font-size: 30px;
         }
 
         .container {
@@ -118,12 +162,36 @@
         }
     </style>
 </head>
+
 <body>
+    <button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
+
+    <div class="sidebar" id="sidebar">
+        <ul>
+            <li><h3>產品分類</h3></li>
+            <li>沙發</li>
+            <li>桌椅</li>
+            <li>床具</li>
+        </ul>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.getElementById('sidebar');
+            if (sidebar.style.left === '0px') {
+                sidebar.style.left = '-200px'; // 收起側邊欄
+            } else {
+                sidebar.style.left = '0px'; // 彈出側邊欄
+            }
+        }
+    </script>
+
+
 
     <div class="sideMenu">
         <form>
             <input type="search" placeholder="請輸入搜尋名稱" />
-            <button><i class="fas fa-search" >確定</i></button>
+            <button><i class="fas fa-search">確定</i></button>
         </form>
         <!--<nav>
          <a href="#"><i class="fas fa-sitemap"></i>二手沙發</a>
