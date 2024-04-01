@@ -192,6 +192,7 @@
     <Content Include="Image\4.jpg" />
     <Content Include="Image\5.jpg" />
     <Content Include="Image\6.jpg" />
+    <Content Include="Image\ig-logo.jpg" />
     <Content Include="Image\second.jpg" />
     <Content Include="Models\ShoppingCar.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
