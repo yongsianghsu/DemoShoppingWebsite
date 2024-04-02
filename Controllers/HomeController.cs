@@ -115,6 +115,15 @@ namespace DemoShoppingWebsite.Controllers
             db.SaveChanges();
             return RedirectToAction("ShoppingCar");
         }
+
+        public ActionResult DeleteCar(int Id)
+        {
+            var orderDetails = db.table_OrderDetail.Where(m => m.Id == Id).FirstOrDefault();
+
+            db.table_OrderDetail.Remove(orderDetails);
+            db.SaveChanges();
+            return RedirectToAction("ShoppingCar");
+        }
     }
 
   
